@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact | XR</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Style unique : Terminal */
+        .terminal { background: #000; padding: 20px; border-left: 5px solid var(--accent); font-family: 'Consolas', monospace; }
+        .cmd-line { color: var(--accent); margin-bottom: 10px; }
+        .response { color: white; margin-bottom: 20px; display: block; }
+        .blink { animation: blinker 1s linear infinite; }
+        @keyframes blinker { 50% { opacity: 0; } }
+        a.contact-link { color: var(--secondary); text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Accueil</a>
+        <a href="about.html">À Propos</a>
+        <a href="skills.html">Compétences</a>
+        <a href="contact.html" class="active">Contact</a>
+    </nav>
+
+    <div class="container">
+        <div class="terminal">
+            <div class="cmd-line">root@portfolio:~# ./afficher_contact.sh</div>
+            <div class="response">
+                > Initialisation du protocole de communication...<br>
+                > -----------------------------------<br>
+                > EMAIL : <a href="mailto:xavierreynard2@gmail.com" class="contact-link">xavierreynard2@gmail.com</a> [cite: 5]<br>
+                > TÉLÉPHONE : 07.83.52.78.87 [cite: 4]<br>
+                > LINKEDIN : <a href="https://www.linkedin.com/in/xavier-reynard-86ab7827b/" class="contact-link" target="_blank">Reynard Xavier</a><br>
+                > -----------------------------------<br>
+                > Statut : En attente de connexion...
+            </div>
+            
+            <div class="cmd-line">root@portfolio:~# <span class="blink">_</span></div>
+        </div>
+    </div>
+</body>
+</html>
