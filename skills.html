@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Compétences | XR</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Style unique : Grille Tech */
+        .tech-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
+        .tech-box { border: 1px solid var(--accent); padding: 15px; text-align: center; transition: 0.3s; }
+        .tech-box:hover { background: rgba(0, 255, 65, 0.1); box-shadow: 0 0 15px var(--accent); }
+        .tech-box h3 { color: var(--accent); margin-bottom: 10px; }
+        .tech-list { list-style: none; padding: 0; color: var(--secondary); }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Accueil</a>
+        <a href="about.html">À Propos</a>
+        <a href="skills.html" class="active">Compétences</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="container">
+        <h2>SYSTÈMES & RESEAUX</h2>
+        <div class="tech-grid">
+            <div class="tech-box">
+                <h3>OS</h3>
+                <ul class="tech-list">
+                    <li>Windows Server [cite: 12]</li>
+                    <li>Debian / Ubuntu [cite: 15, 17]</li>
+                </ul>
+            </div>
+            <div class="tech-box">
+                <h3>INFRA</h3>
+                <ul class="tech-list">
+                    <li>Active Directory [cite: 30]</li>
+                    <li>Docker [cite: 13]</li>
+                    <li>Nginx [cite: 18]</li>
+                </ul>
+            </div>
+            <div class="tech-box">
+                <h3>WEB & CODE</h3>
+                <ul class="tech-list">
+                    <li>HTML / CSS [cite: 11, 14]</li>
+                    <li>Python [cite: 19]</li>
+                    <li>Bash [cite: 20]</li>
+                </ul>
+            </div>
+             <div class="tech-box">
+                <h3>OUTILS</h3>
+                <ul class="tech-list">
+                    <li>Cloudflare (DNS) [cite: 22]</li>
+                    <li>Bitwarden [cite: 21]</li>
+                    <li>MongoDB [cite: 18]</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
