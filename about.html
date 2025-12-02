@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>À Propos | XR</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Style unique : Dossier Confidentiel */
+        .id-card {
+            border: 2px solid var(--border);
+            background: #161b22;
+            padding: 30px;
+            position: relative;
+        }
+        .id-card::before {
+            content: "CONFIDENTIAL";
+            position: absolute;
+            top: -15px; right: 20px;
+            background: var(--bg-color);
+            color: red;
+            padding: 0 10px;
+            font-weight: bold;
+            border: 1px solid red;
+        }
+        .info-row { display: flex; margin-bottom: 15px; border-bottom: 1px dashed #333; padding-bottom: 5px; }
+        .label { width: 150px; color: var(--secondary); font-weight: bold; }
+        .linkedin-btn { display: inline-block; background: #0077b5; color: white; padding: 10px 20px; text-decoration: none; margin-top: 20px; border-radius: 4px; }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html">Accueil</a>
+        <a href="about.html" class="active">À Propos</a>
+        <a href="skills.html">Compétences</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="container">
+        <div class="id-card">
+            <h2>FICHE PROFIL</h2>
+            <div class="info-row"><span class="label">NOM :</span> Reynard Xavier [cite: 1]</div>
+            <div class="info-row"><span class="label">ÂGE :</span> 20 Ans [cite: 3]</div>
+            <div class="info-row"><span class="label">STATUT :</span> Technicien En Cybersécurité [cite: 27]</div>
+            <div class="info-row"><span class="label">FORMATION :</span> BTS CIEL [cite: 37]</div>
+            <div class="info-row"><span class="label">ORIGINE :</span> Bac Pro Maintenance Industrielle [cite: 42, 43]</div>
+            
+            <h3>BIO</h3>
+            <p>Passionné par la technique, j'ai pivoté de la maintenance industrielle vers l'IT. Je construis mon expertise via mon HomeLab (Docker, Self-hosting) [cite: 21] et mes missions en entreprise (Migration AD, Réseau)[cite: 30].</p>
+            
+            <h3>CENTRES D'INTÉRÊTS</h3>
+            <p>Automobile (Hyundai Coupé, Porsche GT3 RS) [cite: 36], Sport (Course, Vélo) [cite: 34], Jeux de stratégie[cite: 35].</p>
+
+            <a href="https://www.linkedin.com/in/xavier-reynard-86ab7827b/" target="_blank" class="linkedin-btn">Voir mon profil LinkedIn complet</a>
+        </div>
+    </div>
+</body>
+</html>
