@@ -2,195 +2,24 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | Reynard Xavier</title>
+    <title>Xavier Reynard | Home</title>
+    <link rel="stylesheet" href="style.css">
     <style>
-        :root {
-            --bg-color: #0f172a;
-            --card-bg: #1e293b;
-            --text-main: #e2e8f0;
-            --text-muted: #94a3b8;
-            --accent: #10b981; /* Vert Cyber */
-            --accent-hover: #34d399;
-        }
-
-        body {
-            font-family: 'Consolas', 'Monaco', 'Courier New', monospace; /* Police style code */
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            margin: 0;
-            line-height: 1.6;
-        }
-
-        /* Navigation */
-        nav {
-            display: flex;
-            justify-content: space-between;
-            padding: 20px 50px;
-            background-color: rgba(15, 23, 42, 0.95);
-            position: sticky;
-            top: 0;
-            border-bottom: 1px solid #334155;
-            z-index: 100;
-        }
-        .logo { font-weight: bold; font-size: 1.2rem; color: var(--accent); }
-        .nav-links a { color: var(--text-main); text-decoration: none; margin-left: 20px; transition: 0.3s; }
-        .nav-links a:hover { color: var(--accent); }
-
-        /* Hero Section */
-        .hero {
-            height: 80vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 0 20px;
-        }
-        h1 { font-size: 3rem; margin-bottom: 10px; }
-        .subtitle { font-size: 1.5rem; color: var(--accent); margin-bottom: 20px; }
-        .tagline { color: var(--text-muted); max-width: 600px; margin-bottom: 30px; }
-        .btn {
-            background-color: var(--accent);
-            color: #000;
-            padding: 10px 25px;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 5px;
-            transition: 0.3s;
-        }
-        .btn:hover { background-color: var(--accent-hover); transform: translateY(-2px); }
-
-        /* Sections Générales */
-        section { padding: 60px 20px; max-width: 1000px; margin: 0 auto; }
-        h2 { border-left: 4px solid var(--accent); padding-left: 15px; margin-bottom: 30px; }
-
-        /* Grille de Compétences */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
-        .card {
-            background-color: var(--card-bg);
-            padding: 20px;
-            border-radius: 8px;
-            border: 1px solid #334155;
-            transition: 0.3s;
-        }
-        .card:hover { border-color: var(--accent); transform: translateY(-5px); }
-        .card h3 { color: var(--accent); margin-top: 0; }
-        
-        /* Badges Tech */
-        .tech-badge {
-            display: inline-block;
-            background: #334155;
-            padding: 4px 8px;
-            border-radius: 4px;
-            font-size: 0.8rem;
-            margin: 2px;
-        }
-
-        /* Footer */
-        footer { text-align: center; padding: 40px; color: var(--text-muted); border-top: 1px solid #334155; }
+        /* Style unique pour l'accueil : Centré verticalement */
+        body { height: 100vh; display: flex; flex-direction: column; }
+        .hero { flex-grow: 1; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; }
+        h1 { font-size: 3rem; margin: 0; text-shadow: 0 0 10px rgba(0, 255, 65, 0.5); }
+        .role { color: var(--secondary); font-size: 1.2rem; margin-top: 10px; }
+        .btn-enter { margin-top: 40px; border: 1px solid var(--accent); padding: 15px 30px; color: var(--accent); text-decoration: none; transition: 0.3s; }
+        .btn-enter:hover { background: var(--accent); color: #000; }
     </style>
 </head>
 <body>
-
-    <nav>
-        <div class="logo">&lt;XR_SECURITY /&gt;</div>
-        <div class="nav-links">
-            <a href="#about">A propos</a>
-            <a href="#skills">Compétences</a>
-            <a href="#homelab">Projets</a>
-            <a href="#contact">Contact</a>
-        </div>
-    </nav>
-
-    <header class="hero">
+    <div class="hero">
         <h1>REYNARD XAVIER</h1>
-        <div class="subtitle">Technicien Cybersécurité & SysAdmin</div>
-        <p class="tagline">
-            Étudiant en BTS CIEL (20 ans). Passionné par l'infrastructure, la virtualisation et le self-hosting.
-            Actuellement en alternance chez BNL.
-        </p>
-        <br>
-        <a href="#contact" class="btn">Télécharger mon CV</a>
-    </header>
-
-    <section id="skills">
-        <h2>_STACK_TECHNIQUE</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>Système & Réseau</h3>
-                <p>Administration et maintenance d'infrastructures.</p>
-                <div>
-                    <span class="tech-badge">Windows Server</span>
-                    <span class="tech-badge">Debian/Ubuntu</span>
-                    <span class="tech-badge">Active Directory</span>
-                </div>
-            </div>
-            <div class="card">
-                <h3>DevOps & Web</h3>
-                <p>Déploiement et conteneurisation.</p>
-                <div>
-                    <span class="tech-badge">Docker</span>
-                    <span class="tech-badge">Nginx</span>
-                    <span class="tech-badge">Bash</span>
-                    <span class="tech-badge">HTML/CSS/JS</span>
-                </div>
-            </div>
-            <div class="card">
-                <h3>Outils</h3>
-                <p>Monitoring et gestion.</p>
-                <div>
-                    <span class="tech-badge">Cloudflare</span>
-                    <span class="tech-badge">MongoDB</span>
-                    <span class="tech-badge">Python</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="homelab">
-        <h2>_PROJET_HOMELAB</h2>
-        <div class="card" style="border-left: 4px solid var(--accent);">
-            <h3>Infrastructure Domestique Auto-Hébergée</h3>
-            <p>Mise en place d'un environnement complet pour simuler un réseau d'entreprise et sécuriser mes données personnelles.</p>
-            <ul>
-                <li><strong>Sécurité :</strong> Gestionnaire de mots de passe Bitwarden auto-hébergé.</li>
-                <li><strong>Réseau :</strong> Gestion DNS via Cloudflare, reverse proxy Nginx.</li>
-                <li><strong>Monitoring :</strong> Suivi de consommation électrique et logs serveurs.</li>
-                <li><strong>Domotique :</strong> Intégration IoT (lampes connectées).</li>
-            </ul>
-            <p style="color: var(--text-muted); font-size: 0.9rem;">Tech: Docker, Linux, Python</p>
-        </div>
-    </section>
-
-    <section id="xp">
-        <h2>_PARCOURS</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>Alternance Cybersécurité</h3>
-                <small>BNL | 2023 - 2025</small>
-                <p>Digitalisation des processus, migration Active Directory complète et conception d'arborescence réseau.</p>
-            </div>
-            <div class="card">
-                <h3>Stage Maintenance</h3>
-                <small>Jacquemet | 2021</small>
-                <p>Maintenance préventive et corrective sur machines industrielles.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" style="text-align: center;">
-        <h2>_CONTACT</h2>
-        <p>Ouvert aux opportunités en Cybersécurité et Administration Système.</p>
-        <p style="font-size: 1.2rem; color: var(--accent);">xavierreynard2@gmail.com</p>
-        <p>07.83.52.78.87</p>
-        <br>
-        <a href="#" class="btn">Linkedin: Reynard Xavier</a>
-    </section>
-
-    <footer>
-        <p>© 2025 Reynard Xavier | Propulsé par GitHub Pages</p>
-    </footer>
-
+        <div class="role">CYBERSECURITY & SYSADMIN</div>
+        <p>Bienvenue sur le système portfolio.khalleessy.fr</p>
+        <a href="about.html" class="btn-enter">ENTRER DANS LE SYSTÈME</a>
+    </div>
 </body>
 </html>
