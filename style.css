@@ -1,273 +1,139 @@
 /* =========================================
-   1. VARIABLES & RESET (GLOBAL)
+   STYLE.CSS - OPTIMISÉ VISUAL HIERARCHY
    ========================================= */
 :root {
     --bg-color: #0d1117;
-    --text-color: #c9d1d9;
-    --accent: #00ff41; /* Vert Hacker */
-    --secondary: #58a6ff; /* Bleu Tech */
+    --text-color: #8b949e; /* Texte de base un peu grisé pour faire ressortir le blanc */
+    --text-highlight: #f0f6fc; /* Blanc éclatant pour l'info importante */
+    --accent: #2ea043; /* Vert GitHub/Cyber plus moderne */
+    --accent-glow: rgba(46, 160, 67, 0.4);
+    --secondary: #58a6ff; 
     --border: #30363d;
     --card-bg: #161b22;
 }
 
 body {
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Segoe UI', 'Courier New', monospace; /* Segoe pour la lisibilité, Courier pour le style */
     background-color: var(--bg-color);
     color: var(--text-color);
-    margin: 0;
+    margin: 0; 
     padding: 0;
-    box-sizing: border-box;
+    line-height: 1.6;
 }
 
-/* =========================================
-   2. NAVIGATION COMMUNE
-   ========================================= */
+/* --- NAVIGATION GUIDÉE --- */
 nav {
     display: flex;
     justify-content: center;
     background: var(--card-bg);
     padding: 15px;
     border-bottom: 1px solid var(--border);
-    position: sticky; /* La nav reste en haut si on scroll */
-    top: 0;
-    z-index: 100;
+    position: sticky; top: 0; z-index: 100;
 }
-
 nav a {
     color: var(--text-color);
     text-decoration: none;
     margin: 0 20px;
-    font-weight: bold;
+    font-weight: 600;
     text-transform: uppercase;
     transition: 0.3s;
+    opacity: 0.7;
 }
-
-nav a:hover {
-    color: var(--accent);
-    text-shadow: 0 0 5px var(--accent);
-}
-
-nav a.active {
-    color: var(--accent);
+nav a:hover, nav a.active {
+    color: var(--text-highlight);
+    opacity: 1;
+    text-shadow: 0 0 10px var(--accent-glow);
     border-bottom: 2px solid var(--accent);
 }
 
-.container {
-    max-width: 900px;
-    margin: 50px auto;
-    padding: 20px;
+.container { max-width: 900px; margin: 50px auto; padding: 20px; }
+
+/* --- CLASSES UTILITAIRES POUR GUIDER L'ŒIL --- */
+/* Mots-clés importants dans le texte */
+strong, .highlight {
+    color: var(--text-highlight);
+    font-weight: 700;
+    border-bottom: 1px dotted var(--accent); /* Souligné discret */
 }
 
-/* =========================================
-   3. PAGE ACCUEIL (GATEWAY)
-   ========================================= */
-/* Classe spéciale pour le body de l'accueil uniquement */
-.home-body {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-}
-
-.hero {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background: radial-gradient(circle at center, #161b22 0%, #0d1117 100%);
-}
-
-.hero h1 {
-    font-size: 3.5rem;
-    margin: 0;
-    letter-spacing: 5px;
-    text-shadow: 0 0 20px rgba(0, 255, 65, 0.3);
-    animation: glitch 1s linear infinite;
-}
-
-.hero .role {
-    color: var(--secondary);
-    font-size: 1.2rem;
-    margin-top: 15px;
-    font-family: 'Consolas', monospace;
-}
-
-.hero .status {
-    margin-top: 20px;
-    color: #8b949e;
-    font-size: 0.9rem;
-}
-
-.hero .status::before {
-    content: "●";
-    color: var(--accent);
-    margin-right: 10px;
-}
-
-.btn-enter {
-    margin-top: 50px;
-    border: 1px solid var(--accent);
-    padding: 15px 40px;
-    color: var(--accent);
-    text-decoration: none;
-    transition: 0.3s;
-    font-weight: bold;
-    letter-spacing: 2px;
-}
-
-.btn-enter:hover {
-    background: var(--accent);
-    color: #000;
-    box-shadow: 0 0 20px var(--accent);
-}
-
-@keyframes glitch {
-    2%, 64% { transform: translate(2px,0) skew(0deg); }
-    4%, 60% { transform: translate(-2px,0) skew(0deg); }
-    62% { transform: translate(0,0) skew(5deg); }
-}
-
-/* =========================================
-   4. PAGE À PROPOS (DOSSIER)
-   ========================================= */
-.id-card {
-    border: 2px solid var(--border);
-    background: var(--card-bg);
-    padding: 30px;
-    position: relative;
-}
-
-.id-card::before {
-    content: "CONFIDENTIAL";
-    position: absolute;
-    top: -15px; right: 20px;
-    background: var(--bg-color);
-    color: red;
-    padding: 0 10px;
-    font-weight: bold;
-    border: 1px solid red;
-}
-
-.info-row {
-    display: flex;
-    margin-bottom: 15px;
-    border-bottom: 1px dashed #333;
-    padding-bottom: 5px;
-}
-
-.info-row .label {
-    width: 150px;
-    color: var(--secondary);
-    font-weight: bold;
-}
-
-.linkedin-btn {
+/* Badges pour les compétences (Regard attiré ici) */
+.skill-badge {
     display: inline-block;
-    background: #0077b5;
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    margin-top: 20px;
-    border-radius: 4px;
-    transition: opacity 0.3s;
-}
-
-.linkedin-btn:hover {
-    opacity: 0.8;
-}
-
-/* =========================================
-   5. PAGE COMPÉTENCES (GRILLE)
-   ========================================= */
-.tech-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-}
-
-.tech-box {
-    border: 1px solid var(--accent);
-    padding: 15px;
-    text-align: center;
-    transition: 0.3s;
-}
-
-.tech-box:hover {
-    background: rgba(0, 255, 65, 0.1);
-    box-shadow: 0 0 15px var(--accent);
-}
-
-.tech-box h3 {
-    color: var(--accent);
-    margin-bottom: 10px;
-}
-
-.tech-list {
-    list-style: none;
-    padding: 0;
+    background: rgba(56, 139, 253, 0.1);
     color: var(--secondary);
-}
-
-/* =========================================
-   6. PAGE CONTACT (TERMINAL)
-   ========================================= */
-.terminal-window {
-    background: #000;
-    border: 1px solid #333;
+    border: 1px solid var(--border);
+    padding: 5px 10px;
     border-radius: 6px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    max-width: 800px;
-    margin: 0 auto;
-    font-family: 'Consolas', 'Monaco', monospace;
-    overflow: hidden;
+    font-size: 0.9em;
+    font-weight: bold;
+    margin: 3px;
+    transition: 0.2s;
+}
+.skill-badge:hover {
+    border-color: var(--secondary);
+    background: rgba(56, 139, 253, 0.2);
+    transform: translateY(-2px);
+    cursor: default;
 }
 
-.terminal-header {
-    background: #333;
-    padding: 5px 15px;
-    color: #ccc;
-    font-size: 0.8rem;
-    display: flex;
-    align-items: center;
+/* --- ACCUEIL (FOCUS CENTRAL) --- */
+.home-body { height: 100vh; display: flex; flex-direction: column; overflow: hidden; }
+.hero { 
+    flex-grow: 1; display: flex; flex-direction: column; 
+    justify-content: center; align-items: center; text-align: center;
+    background: radial-gradient(circle at center, #1b2430 0%, #0d1117 70%);
 }
-
-.dot { height: 10px; width: 10px; background: #ff5f56; border-radius: 50%; margin-right: 5px; display: inline-block;}
-.dot.yellow { background: #ffbd2e; }
-.dot.green { background: #27c93f; }
-
-.terminal-body {
-    padding: 20px;
-    min-height: 400px;
+.hero h1 {
+    color: var(--text-highlight);
+    font-size: 3.5rem; margin: 0;
+    text-shadow: 0 0 25px var(--accent-glow);
 }
-
-.cmd-line { color: var(--accent); margin-bottom: 15px; }
-.user-prompt { color: #27c93f; }
-.path-prompt { color: #58a6ff; }
-
-.terminal-response {
-    color: var(--text-color);
-    margin-bottom: 30px;
-    line-height: 1.8;
+.hero .role {
+    color: var(--accent); /* Le rôle est CRUCIAL, on le met en vert */
+    font-size: 1.5rem; margin-top: 10px; font-weight: bold;
+    letter-spacing: 1px;
 }
-
-.contact-item { margin-left: 20px; display: block; }
-.contact-label { color: var(--secondary); display: inline-block; width: 120px; }
-
-a.terminal-link {
-    color: var(--text-color);
-    text-decoration: underline;
-    text-decoration-color: var(--accent);
+.btn-enter {
+    margin-top: 40px;
+    background: var(--accent);
+    color: #fff; /* Contraste fort */
+    padding: 15px 40px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+    box-shadow: 0 0 15px var(--accent-glow);
 }
+.btn-enter:hover { transform: scale(1.05); background: #26a641; }
 
-a.terminal-link:hover {
-    color: var(--accent);
-    background: rgba(0, 255, 65, 0.1);
+/* --- CARTE PROFIL (ID) --- */
+.id-card { 
+    border: 1px solid var(--border); background: var(--card-bg); padding: 30px; border-radius: 8px; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
+.info-row { 
+    display: flex; justify-content: space-between; align-items: center;
+    margin-bottom: 15px; border-bottom: 1px solid var(--border); padding-bottom: 8px; 
+}
+.label { color: var(--text-color); font-size: 0.9em; }
+.value { color: var(--text-highlight); font-weight: bold; font-family: 'Consolas', monospace; }
 
-.blink {
-    animation: blinker 1s step-end infinite;
-    border-right: 10px solid var(--text-color);
+/* --- GRILLE COMPÉTENCES --- */
+.tech-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; }
+.tech-box { 
+    background: var(--card-bg); border: 1px solid var(--border); padding: 20px; border-radius: 8px; 
+    transition: 0.3s; 
 }
-@keyframes blinker { 50% { border-color: transparent; } }
+.tech-box:hover { border-color: var(--accent); transform: translateY(-5px); }
+.tech-box h3 { color: var(--text-highlight); border-bottom: 2px solid var(--accent); display: inline-block; margin-bottom: 15px; }
+
+/* --- TERMINAL CONTACT --- */
+.terminal-window { 
+    background: #0d1117; border: 1px solid var(--border); border-radius: 6px; 
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5); max-width: 800px; margin: 0 auto; 
+}
+.terminal-body { padding: 30px; }
+.contact-item { margin-top: 15px; display: flex; align-items: center; }
+.contact-label { color: var(--accent); width: 100px; font-weight: bold; }
+a.terminal-link { color: var(--text-highlight); text-decoration: none; border-bottom: 1px solid var(--border); }
+a.terminal-link:hover { border-color: var(--accent); color: var(--accent); }
