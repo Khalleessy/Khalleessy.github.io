@@ -4,8 +4,7 @@
 [![Build](https://img.shields.io/badge/Build-HTML5_%2F_CSS3-orange?style=for-the-badge&logo=html5)](https://developer.mozilla.org/fr/docs/Web/HTML)
 [![Hosted](https://img.shields.io/badge/Hosted-GitHub_Pages-blue?style=for-the-badge&logo=github)](https://pages.github.com/)
 
-> **Visiter le site :** [🔗 portfolio.khalleessy.fr](https://portfolio.khalleessy.fr) (ou https://[ton-pseudo].github.io si le domaine n'est pas encore actif)
-
+> **Visiter le site :** [🔗 portfolio.khalleessy.fr](https://portfolio.khalleessy.fr) 
 ## 📌 À Propos
 Ce projet est mon portfolio professionnel. Il a été conçu pour présenter mes compétences en **Cybersécurité**, **Administration Système** et **DevOps**.
 
