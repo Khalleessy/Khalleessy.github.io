@@ -2,17 +2,8 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Contact | XR</title>
+    <title>Contact | Terminal</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        /* Style unique : Terminal */
-        .terminal { background: #000; padding: 20px; border-left: 5px solid var(--accent); font-family: 'Consolas', monospace; }
-        .cmd-line { color: var(--accent); margin-bottom: 10px; }
-        .response { color: white; margin-bottom: 20px; display: block; }
-        .blink { animation: blinker 1s linear infinite; }
-        @keyframes blinker { 50% { opacity: 0; } }
-        a.contact-link { color: var(--secondary); text-decoration: underline; }
-    </style>
 </head>
 <body>
     <nav>
@@ -23,19 +14,43 @@
     </nav>
 
     <div class="container">
-        <div class="terminal">
-            <div class="cmd-line">root@portfolio:~# ./afficher_contact.sh</div>
-            <div class="response">
-                > Initialisation du protocole de communication...<br>
-                > -----------------------------------<br>
-                > EMAIL : <a href="mailto:xavierreynard2@gmail.com" class="contact-link">xavierreynard2@gmail.com</a> <br>
-                > TÉLÉPHONE : 07.83.52.78.87 <br>
-                > LINKEDIN : <a href="https://www.linkedin.com/in/xavier-reynard-86ab7827b/" class="contact-link" target="_blank">Reynard Xavier</a><br>
-                > -----------------------------------<br>
-                > Statut : En attente de connexion...
+        <div class="terminal-window">
+            <div class="terminal-header">
+                <span class="dot"></span><span class="dot yellow"></span><span class="dot green"></span>
+                <span style="margin-left: 10px">root@portfolio-server:~</span>
             </div>
-            
-            <div class="cmd-line">root@portfolio:~# <span class="blink">_</span></div>
+            <div class="terminal-body">
+                <div class="cmd-line">
+                    <span class="user-prompt">root@xr-server</span>:<span class="path-prompt">~</span># ./afficher_contact.sh --verbose
+                </div>
+                
+                <div class="terminal-response">
+                    > Chargement des protocoles de communication... OK<br>
+                    > Récupération des données publiques... OK<br>
+                    > Affichage des coordonnées :<br><br>
+                    
+                    <span class="contact-item">
+                        <span class="contact-label">EMAIL:</span> 
+                        <a href="mailto:xavierreynard2@gmail.com" class="terminal-link">xavierreynard2@gmail.com</a>
+                    </span>
+                    <span class="contact-item">
+                        <span class="contact-label">TÉLÉPHONE:</span> 
+                        07.83.52.78.87
+                    </span>
+                    <span class="contact-item">
+                        <span class="contact-label">LINKEDIN:</span> 
+                        <a href="https://www.linkedin.com/in/xavier-reynard-86ab7827b/" target="_blank" class="terminal-link">linkedin.com/in/xavier-reynard</a>
+                    </span>
+                    <span class="contact-item">
+                        <span class="contact-label">LOCALISATION:</span> 
+                        France
+                    </span>
+                </div>
+
+                <div class="cmd-line">
+                    <span class="user-prompt">root@xr-server</span>:<span class="path-prompt">~</span># <span class="blink"> </span>
+                </div>
+            </div>
         </div>
     </div>
 </body>
