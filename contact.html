@@ -15,40 +15,35 @@
 
     <div class="container">
         <div class="terminal-window">
-            <div class="terminal-header">
-                <span class="dot"></span><span class="dot yellow"></span><span class="dot green"></span>
-                <span style="margin-left: 10px">root@portfolio-server:~</span>
+            <div class="terminal-header" style="background: #21262d; padding: 10px;">
+                <span style="color:#f0f6fc; font-size: 0.8rem;">root@portfolio:~ (ssh)</span>
             </div>
             <div class="terminal-body">
-                <div class="cmd-line">
-                    <span class="user-prompt">root@xr-server</span>:<span class="path-prompt">~</span># ./afficher_contact.sh --verbose
-                </div>
+                <div style="color: #8b949e; margin-bottom: 20px;"># Initialisation du canal de recrutement...</div>
                 
-                <div class="terminal-response">
-                    > Chargement des protocoles de communication... OK<br>
-                    > Récupération des données publiques... OK<br>
-                    > Affichage des coordonnées :<br><br>
-                    
-                    <span class="contact-item">
-                        <span class="contact-label">EMAIL:</span> 
-                        <a href="mailto:xavierreynard2@gmail.com" class="terminal-link">xavierreynard2@gmail.com</a>
-                    </span>
-                    <span class="contact-item">
-                        <span class="contact-label">TÉLÉPHONE:</span> 
-                        07.83.52.78.87
-                    </span>
-                    <span class="contact-item">
-                        <span class="contact-label">LINKEDIN:</span> 
-                        <a href="https://www.linkedin.com/in/xavier-reynard-86ab7827b/" target="_blank" class="terminal-link">linkedin.com/in/xavier-reynard</a>
-                    </span>
-                    <span class="contact-item">
-                        <span class="contact-label">LOCALISATION:</span> 
-                        France
-                    </span>
+                <div class="contact-item">
+                    <span class="contact-label">STATUT ::</span> 
+                    <span style="color: var(--accent); font-weight: bold;">OPEN TO WORK / DISPONIBLE</span>
                 </div>
 
-                <div class="cmd-line">
-                    <span class="user-prompt">root@xr-server</span>:<span class="path-prompt">~</span># <span class="blink"> </span>
+                <div class="contact-item">
+                    <span class="contact-label">EMAIL ::</span> 
+                    <a href="mailto:xavierreynard2@gmail.com" class="terminal-link" style="font-size: 1.2rem;">xavierreynard2@gmail.com</a>
+                </div>
+                
+                <div class="contact-item">
+                    <span class="contact-label">TEL ::</span> 
+                    <span style="color: var(--text-highlight); font-size: 1.2rem;">07.83.52.78.87</span>
+                </div>
+                
+                <div class="contact-item">
+                    <span class="contact-label">LINKEDIN ::</span> 
+                    <a href="https://www.linkedin.com/in/xavier-reynard-86ab7827b/" target="_blank" class="terminal-link">linkedin.com/in/xavier-reynard</a>
+                </div>
+
+                <div style="margin-top: 40px; border-top: 1px dashed #30363d; padding-top: 20px; color: #8b949e;">
+                    # En attente de votre proposition...<br>
+                    <span style="color: var(--accent);">root@portfolio:~#</span> <span class="blink" style="background: var(--accent); width: 10px; height: 20px; display: inline-block;">&nbsp;</span>
                 </div>
             </div>
         </div>
